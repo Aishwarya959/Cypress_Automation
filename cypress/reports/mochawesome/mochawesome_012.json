@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-02-24T06:59:14.062Z",
+    "end": "2025-02-24T06:59:46.110Z",
+    "duration": 32048,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "dbcf4276-7e88-4582-a0fc-565032e65962",
+      "title": "",
+      "fullFile": "cypress\\e2e\\myInfoCRM.cy.js",
+      "file": "cypress\\e2e\\myInfoCRM.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "624a7c19-3fd0-4e72-90cb-504b3ca64fdf",
+          "title": "My Info Tests on Orange HRM Application",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify Login and My info to the HRM App is working",
+              "fullTitle": "My Info Tests on Orange HRM Application Verify Login and My info to the HRM App is working",
+              "timedOut": null,
+              "duration": 29767,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\myInfoCRM.cy.js\"\n}",
+              "code": "cy.fixture('example.json').then(testdata => {\n  const {\n    baseUrlUsername,\n    baseUrlPassword\n  } = testdata;\n  //   // Fill in the login form\n  cy.loginHRM(baseUrlUsername, baseUrlPassword),\n  // cy.wait(5000);\n  cy.get(`.oxd-text.oxd-text--span.oxd-main-menu-item--name`);\n  cy.xpath(\"//span[normalize-space()='My Info']\").should('be.visible', {\n    timeout: 10000\n  }).click();\n  cy.myinfo();\n  // Ignore uncaught exceptions\n  Cypress.on('uncaught:exception', (err, runnable) => {\n    // Prevent Cypress from failing the test when the error occurs\n    console.error('Uncaught exception:', err);\n    // Returning false prevents the test from failing\n    return false;\n  });\n});",
+              "err": {},
+              "uuid": "78db545e-5f01-4b5c-ae1d-bec9b7186356",
+              "parentUUID": "624a7c19-3fd0-4e72-90cb-504b3ca64fdf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "78db545e-5f01-4b5c-ae1d-bec9b7186356"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 29767,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
